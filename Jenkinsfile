@@ -1,7 +1,7 @@
 pipeline {
-    agent any
+    agent none
 
-    tools {nodejs "node"}
+   // tools {nodejs "node"}
 
     stages {
         stage('Cypress Parallel Test Suite') {
@@ -14,7 +14,7 @@ pipeline {
                         git url: 'https://github.com/alesiavaronich/cypress-automation-framework.git'
                         bat 'npm install'
                         bat 'npm update'
-                        bat 'npm run %Script%'
+                        bat 'npm run triggerAllTests-autoTestStore-dashboard'
                     }
                 }
                 stage('Slave Node2') {  
@@ -25,7 +25,7 @@ pipeline {
                         git url: 'https://github.com/alesiavaronich/cypress-automation-framework.git'
                         bat 'npm install'
                         bat 'npm update'
-                        bat 'npm run %Script%'
+                        bat 'npm run triggerAllTests-autoTestStore-dashboard'
                     }
                 }
             }
