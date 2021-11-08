@@ -7,7 +7,6 @@ describe("Iterate over elements", () => {
     })
 
     it("Log information of all hair care products", () => {
-        // We are going to iterate through the list of hair care products and log the name for each product using JQuery .text()
         cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) => {
             cy.log("Index: " + index + " : " + $el.text())
         })

@@ -1,3 +1,5 @@
+/// <reference types="Cypress" />
+
 describe('Hooks', () => {
     before(() => {
         cy.log("runs once before all tests in the block");

@@ -12,7 +12,6 @@ describe("Verify Autocomplete dropdown lists via webdriveruni", () => {
             const productToSelect = 'Avacado';
 
             if (prod === productToSelect) {
-                //$el.click();
                 $el.trigger("click");
 
                 cy.get('#submit-button').click();
@@ -26,7 +25,6 @@ describe("Verify Autocomplete dropdown lists via webdriveruni", () => {
                 const productToSelect = 'Grapes';
 
                 if (prod === productToSelect) {
-                    //$el.click();
                     $el.trigger("click");
 
                     cy.get('#submit-button').click();

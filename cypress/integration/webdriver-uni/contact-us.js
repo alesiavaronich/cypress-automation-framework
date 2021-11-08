@@ -2,7 +2,7 @@ import HomePage_PO from '../../support/pageObjects/webdriver-uni/Homepage_PO'
 import Contact_Us_PO from '../../support/pageObjects/webdriver-uni/Contact_Us_PO'
 /// <reference types="Cypress" />
 
-// In the following tests we are going to use custome commands to fill out the forms with user information.
+// In the following tests we are going to use custom commands to fill out the forms with user information.
 // The commented out code within the tests was transfered to the custom commands located in support/Commands.js
 // Also, we are going to store and retrieve user info from fixtures/userDetails.json file
 
@@ -13,8 +13,8 @@ describe("Test Contact Us form via WebdriverUni", () => {
 
     before(function () {
         cy.fixture('example').then(function (data) {
-            //this.data = data; // we initialize our example.json file
-            globalThis.data = data; // if you run into issues with the previous command, use this one instead
+            //this.data = data;
+            globalThis.data = data;
         });
     });
 

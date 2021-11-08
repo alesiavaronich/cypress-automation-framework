@@ -9,7 +9,6 @@ describe("Validate webdriveruni homepage links", () => {
         cy.go('back')
         cy.reload()
         cy.url().should('include', 'http://www.webdriveruniversity.com/')
-        //cy.reload(true) //reload the page without using cache
 
         cy.go('forward')
         cy.url().should('include', 'contactus')

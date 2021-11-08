@@ -1,5 +1,16 @@
 {
-    "email": "sam_blogs@webdriveruni.com",
-    "first_name": "Sam",
-    "last_name": "Blogs"
+    "users": [
+        {
+            "email": "sam_blogs@webdriveruni.com",
+            "first_name": "Sam",
+            "last_name": "Blogs",
+            "user_enquiry": "Do you provide additional discount on bulk orders?"
+        },
+        {
+            "email": "jane_smith@gmail.com",
+            "first_name": "Jane",
+            "last_name": "Smith",
+            "user_enquiry": "Hello. I am looking for the contact of the tech support. Thanks!"
+        }
+    ]
 }
