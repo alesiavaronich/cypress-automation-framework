@@ -3,6 +3,7 @@
     "chromeWebSecurity": false,
     "defaultCommandTimeout": 10000,
     "pageLoadTimeout": 30000,
+    "ignoreTestFiles": "**/other/*",
     "retries": {
         "runMode": 0,
         "openMode": 0

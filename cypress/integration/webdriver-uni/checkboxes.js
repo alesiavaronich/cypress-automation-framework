@@ -3,11 +3,9 @@
 describe("Verify checkboxes via webdriveruni", () => {
     beforeEach(function() {
         cy.log(Cypress.env("name"))
-        cy.navigateTo_WebdriverUni_Checkbox_Page(); // Here we have created a custom command - ref. to 'support/commands.js'
-        //cy.navigateTo_WebdriverUni_Homepage(); // Here we have created a custom command - ref. to 'support/commands.js'
-        //cy.visit("/"); // a baseUrl was set up - ref. to 'cypress.json'
-        //cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({ force: true })
+        cy.navigateTo_WebdriverUni_Checkbox_Page(); 
     });
+    
     it("Check and validate checkbox", () => {
         cy.get('#checkboxes > :nth-child(1) > input').check().as('option-1')
         cy.get('@option-1').check().should('be.checked');

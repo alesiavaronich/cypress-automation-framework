@@ -3,7 +3,7 @@
 describe("Iterate over elements", () => {
     beforeEach(function() {
         cy.visit("https://www.automationteststore.com/");
-        cy.get("a[href*='product/category&path=']").contains("Hair Care").click()
+        cy.get("a[href*='product/category&path=']").contains("Hair Care").click();
     })
 
     it("Log information of all hair care products", () => {
@@ -13,12 +13,7 @@ describe("Iterate over elements", () => {
     });
 
     it("Add specific product to basket", () => {
-        // cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) => {
-        //     if($el.text().includes('Curls to straight Shampoo')) {
-        //         cy.wrap($el).click()
-        //     }
-        // })
-        cy.selectProduct('Curls to straight Shampoo'); // We have converted the above code into this custom command - ref. Support/Commands.js
+        cy.selectProduct('Curls to straight Shampoo');
     });
 
     it("Add another specific product to basket", () => {

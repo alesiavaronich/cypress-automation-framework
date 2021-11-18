@@ -24,7 +24,8 @@
   "author": "Alesia Varonich",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^8.5.0",
+    "cypress": "^8.7.0",
+    "cypress-cucumber-preprocessor": "^4.3.0",
     "cypress-file-upload": "^5.0.8",
     "cypress-multi-reporters": "^1.5.0",
     "cypress-xpath": "^1.6.2",
@@ -33,6 +34,9 @@
     "mochawesome": "^6.3.1",
     "mochawesome-merge": "^4.2.0",
     "mochawesome-report-generator": "^5.2.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/integration/BDD/"
   }
- 
 }

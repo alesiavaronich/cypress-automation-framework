@@ -1,9 +1,14 @@
+import User from '../../fixtures/User';
+import UserFactory from '../../fixtures/UserFactory';
+
 /// <reference types="Cypress" />
 
 describe("Test Contact Us form via Automation Test Store", () => {
-    
+    const userOne = new UserFactory().userOne();
+    const userTwo = new UserFactory().userTwo();
+
     beforeEach(function () {
-        cy.fixture("userDetails").as("user")
+        cy.fixture("userDetails").as("user");
     })
 
     it("Should be able to submit a successful submission via contact us form", () => {
@@ -13,9 +18,9 @@ describe("Test Contact Us form via Automation Test Store", () => {
         })
 
         cy.get("@user").then((user) => {
-            cy.get('#ContactUsFrm_first_name').type(user.users[0].first_name);
-            cy.get('#ContactUsFrm_email').type(user.users[0].email);
-            cy.get('#ContactUsFrm_enquiry').type(user.users[0].user_enquiry);
+            cy.get('#ContactUsFrm_first_name').type(userOne.first_name);
+            cy.get('#ContactUsFrm_email').type(userOne.email);
+            cy.get('#ContactUsFrm_enquiry').type(userOne.user_enquiry);
         })
 
         cy.get('#ContactUsFrm_email').should('have.attr', 'name', 'email');
@@ -29,9 +34,9 @@ describe("Test Contact Us form via Automation Test Store", () => {
         cy.get("a[href$='contact']").click()
 
         cy.get("@user").then((user) => {
-            cy.get('#ContactUsFrm_first_name').type(user.users[1].first_name);
-            cy.get('#ContactUsFrm_email').type(user.users[1].email);
-            cy.get('#ContactUsFrm_enquiry').type(user.users[1].user_enquiry);
+            cy.get('#ContactUsFrm_first_name').type(userTwo.first_name);
+            cy.get('#ContactUsFrm_email').type(userTwo.email);
+            cy.get('#ContactUsFrm_enquiry').type(userTwo.user_enquiry);
         })
 
         cy.get('#ContactUsFrm_email').should('have.attr', 'name', 'email');

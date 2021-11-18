@@ -1,4 +1,4 @@
-class HomePage_PO {
+class Homepage_PO {
     visitHomepage() {
         cy.visit(Cypress.env("webdriveruni_homepage"), {timeot: 60000});
     }
@@ -7,4 +7,4 @@ class HomePage_PO {
         cy.get('#contact-us').invoke("removeAttr", "target").click({force: true}, {timeot: 8000});
     }
 }
-export default HomePage_PO;
+export default Homepage_PO;
