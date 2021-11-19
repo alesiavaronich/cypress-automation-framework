@@ -6,7 +6,7 @@ describe("Test file upload via webdriveruni", () => {
         cy.get('#file-upload').invoke('removeAttr', 'target').click({ force: true })
         
         // By default JSON files are stored in 'fixtures' folder and then used for further manipulations
-        // Therefore, for JSON files we would not need to provide the same level of detailsc
+        // Therefore, for JSON files we would not need to provide the same level of details
         // Other file formats require additional details in order to upload correctly
 
         // cy.fixture() points to the .png file in our local 'fixtures' folder
@@ -29,10 +29,6 @@ describe("Test file upload via webdriveruni", () => {
         cy.get("#submit-button").click();
     });
 
-    // In the following example all we have to do is click on 'submit' button
-    // Note that JS alerts are automatically handled by cypress
-    // Therefore, in our text runner's log we shall see a notification:
-    // "(alert) You need to select a file to upload!" - cypress took care of it for us
     it("Upload no file", () => {
         cy.visit("http://www.webdriveruniversity.com");
         cy.get('#file-upload').invoke('removeAttr', 'target').click({ force: true })

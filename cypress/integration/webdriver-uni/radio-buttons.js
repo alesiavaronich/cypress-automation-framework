@@ -1,22 +1,27 @@
 /// <reference types="Cypress" />
+import Radiobuttons_PO from '../../support/pageObjects/webdriver-uni/Radiobuttons_PO';
+const radiobuttons = new Radiobuttons_PO();
+
 
 describe("Verify radio buttons via webdriveruni", () => {
-    before(function() {
-        cy.visit("http://www.webdriveruniversity.com");
-        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({ force: true })
+
+    beforeEach(() => {
+        cy.visitHomepage()
+        cy.getRadiobuttonsWindow()
     })
+    
     it("Check specific radio buttons", () => {
-        cy.get('#radio-buttons').find("[type='radio']").eq(1).check()
+        radiobuttons.getRadiobuttonsBox().eq(1).check()
     });
 
     it("Validates state of specific radio buttons", () => {
-        cy.get("[value='lettuce']").should('not.be.checked')
-        cy.get("[value='pumpkin']").should('be.checked')
+        radiobuttons.getValueLettuce().should('not.be.checked')
+        radiobuttons.getValuePumpkin().should('be.checked')
 
-        cy.get("[value='lettuce']").check().should('be.checked')
-        cy.get("[value='pumpkin']").should('not.be.checked')
+        radiobuttons.getValueLettuce().check().should('be.checked')
+        radiobuttons.getValuePumpkin().should('not.be.checked')
 
-        cy.get("[value='cabbage']").should('be.disabled')
+        radiobuttons.getValueCabbage().should('be.disabled')
 
     });
     

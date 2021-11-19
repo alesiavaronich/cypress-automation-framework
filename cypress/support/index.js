@@ -19,6 +19,7 @@ import './commands'
 import './customCommands/webdriver-uni/Homepage_CC'
 import './customCommands/webdriver-uni/MouseActions_CC'
 import './customCommands/webdriver-uni/Alerts_CC'
+import './customCommands/webdriver-uni/Radiobuttons_CC'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
