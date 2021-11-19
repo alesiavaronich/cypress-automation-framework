@@ -16,6 +16,9 @@ require('cypress-xpath')
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import './customCommands/webdriver-uni/Homepage_CC'
+import './customCommands/webdriver-uni/MouseActions_CC'
+import './customCommands/webdriver-uni/Alerts_CC'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

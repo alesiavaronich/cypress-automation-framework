@@ -1,6 +1,6 @@
+/// <reference types="Cypress" />
 import HomePage_PO from '../../support/pageObjects/webdriver-uni/Homepage_PO'
 import Contact_Us_PO from '../../support/pageObjects/webdriver-uni/Contact_Us_PO'
-/// <reference types="Cypress" />
 
 
 describe("Test Contact Us form via WebdriverUni", () => {

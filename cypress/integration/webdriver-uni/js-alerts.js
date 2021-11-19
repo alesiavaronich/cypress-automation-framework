@@ -1,53 +1,48 @@
 /// <reference types="Cypress" />
+import Alerts_PO from '../../support/pageObjects/webdriver-uni/Alerts_PO';
+const alerts = new Alerts_PO();
+
 
 describe("Handle js alerts", () => {
-    it("Confirm js alert contains the correct text", () => {
-        cy.visit("http://www.webdriveruniversity.com");
-        cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true })
-        cy.get('#button1').click()
 
+    beforeEach(() => {
+        cy.visitHomepage()
+        cy.getAlertsWindow();
+    })
+
+    it("Confirm js alert contains the correct text", () => {
+        alerts.clickJavaScriptAlertBtn()
         cy.on('window:alert', (str) => {
             expect(str).to.equal('I am an alert box!')
         })
-
     });
 
     it("Validate js confirm alert box works correctly when clicking on ok", () => {
-        cy.visit("http://www.webdriveruniversity.com");
-        cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true })
-        cy.get('#button4').click()
-
-        cy.on('window:alert', (str) => {
+        alerts.clickJavaScriptConfirmBoxBtn()
+        cy.on('window:confirm', (str) => {
             return true;
         })
-        cy.get('#confirm-alert-text').contains('You pressed OK!')
+        alerts.getConfirmationOk()
     })
 
     it("Validate js confirm alert box works correctly when clicking on Cancel", () => {
-        cy.visit("http://www.webdriveruniversity.com");
-        cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true })
-        cy.get('#button4').click()
-
+        alerts.clickJavaScriptConfirmBoxBtn()
         cy.on('window:confirm', (str) => {
             return false;
         })
-
-        cy.get('#confirm-alert-text').contains('You pressed Cancel!')
+        alerts.getConfirmationCancel()
     })
 
-    it.only("Validate js confirm alert box using a stub", () => {
-        cy.visit("http://www.webdriveruniversity.com");
-        cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true })
-
+    it("Validate js confirm alert box using a stub", () => {
         const stub = cy.stub()
         cy.on('window:confirm', stub)
 
-        cy.get('#button4').click().then(() => {
+        alerts.clickJavaScriptConfirmBoxBtn().then(() => {
             expect(stub.getCall(0)).to.be.calledWith('Press a button!')
         }).then(() => {
             return true;
         }).then(() => {
-            cy.get('#confirm-alert-text').contains('You pressed OK!')
+            alerts.getConfirmationOk()
         })
     })
 });

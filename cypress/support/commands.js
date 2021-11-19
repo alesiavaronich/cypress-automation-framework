@@ -1,3 +1,5 @@
+import 'cypress-file-upload';
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -19,6 +21,10 @@
 //
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
+
+// -- This will overwrite an existing command --
+// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
 Cypress.Commands.add("navigateTo_WebdriverUni_Homepage", () => {
     cy.visit("/")
 })
@@ -53,6 +59,3 @@ Cypress.Commands.add("webdriverUni_ContactForm_Submission", (firstName, lastName
     cy.get($selector).contains(textToLocate);
 });
 
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import 'cypress-file-upload';
